@@ -6,6 +6,8 @@ ps4 = 200
 xbox360 = 115
 xbox1 = 200
 # 3. Ask the customer how many of each type of game they wish to purchase.
+print "are you a veteran"
+veteran = gets.chomp
 print "what kind of consol would you like"
 choose = gets.chomp
 print "how many would you like"
@@ -15,17 +17,29 @@ customeramt = gets.chomp
 puts jeremy
 puts choose
 puts customeramt
-puts "your total is"
-if choose == "ps3"
-	 puts ps3 * customeramt.to_i
+if veteran == "yes" 
+	puts "your total is"
+	if choose == "ps3"
+		puts ps3 * customeramt.to_i * 0.8
 	elsif choose == "ps4"
-		puts ps4 * customeramt.to_i
-		elsif choose == "xbox360"
-			puts xbox360 * customeramt.to_i
-			elsif choose == "xbox1"
-				puts xbox1 * customeramt.to_i
-			end
-
+		puts ps4 * customeramt.to_i * 0.8
+	elsif choose == "xbox360"
+		puts xbox360 * customeramt.to_i * 0.8
+	elsif choose == "xbox1"
+		puts xbox1 * customeramt.to_i * 0.8
+	end
+elsif veteran == "no"
+	puts "your total is"
+	if choose == "ps3"
+		puts ps3 * customeramt.to_i 
+	elsif choose == "ps4"
+		puts ps4 * customeramt.to_i 
+	elsif choose == "xbox360"
+		puts xbox360 * customeramt.to_i 
+	elsif choose == "xbox1"
+		puts xbox1 * customeramt.to_i 
+	end
+end
 # 5. Push to github.
 
 # 6. Run a 20% off sale if the customer is a veteran. Make sure to ask your customer and apply the discount at the end if their receipt.
